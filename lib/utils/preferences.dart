@@ -36,11 +36,13 @@ class Preferences {
   static bool getBool(String key, bool defValue) =>
       _prefs.getBool(key) ?? defValue;
 
+  /// 儲存
   static void save(FormModel model) {
     _prefs.setString("email", model.email);
     _prefs.setString("name", model.displayName);
   }
 
+  /// 清除
   static void clear() {
     _prefs.clear();
   }

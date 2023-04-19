@@ -54,6 +54,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  /// 呈現資料
   _setInfo() {
     String name = Preferences.getString("name", "");
     if (name.isNotEmpty) {

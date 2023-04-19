@@ -26,6 +26,7 @@ class FormModel {
     this.isSwim = false,
   });
 
+  /// 將 Map 轉成物件
   factory FormModel.fromJson(Map<String, dynamic> json) => FormModel(
         email: json['email'] as String,
         displayName: json['display_name'] as String,
@@ -38,6 +39,7 @@ class FormModel {
         isSwim: json['is_swim'] as bool,
       );
 
+  /// 將物件轉成 Json String
   Map<String, dynamic> toJson() => {
         'email': email,
         'display_name': displayName,

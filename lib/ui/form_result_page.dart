@@ -55,6 +55,7 @@ class FormResultPage extends StatelessWidget {
     );
   }
 
+  /// 建立興趣的列表 Widget
   List<Widget> _buildHabitList() {
     List<Widget> list = [];
     if (model.isBasketball) {

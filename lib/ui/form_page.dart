@@ -126,7 +126,7 @@ class _FormPageState extends State<FormPage> {
                 ElevatedButton(
                   onPressed: () {
                     if (!_formKey.currentState!.validate()) {
-                      _showErrorMessage();
+                      _showErrorMessage(context);
                       return;
                     }
                     if (!model.isAgree) {
@@ -157,6 +157,7 @@ class _FormPageState extends State<FormPage> {
     );
   }
 
+  /// 建立 Radio 的畫面
   List<Widget> _buildRadio() {
     List<Widget> list = [];
     for (GenderOption option in GenderOption.values) {
@@ -171,19 +172,21 @@ class _FormPageState extends State<FormPage> {
     }
     return list;
   }
-
+  /// Radio 產生變化的設定
   void _handleRadioChange(GenderOption value) {
     setState(() {
       model.gender = value;
     });
   }
 
-  void _showErrorMessage() {
+  /// 使用 SnackBar 來顯示錯誤訊息
+  void _showErrorMessage(BuildContext conetxt) {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('有資料未填')),
     );
   }
 
+  /// 使用 Dialog 來顯示錯誤訊息
   void _showAgree(BuildContext context) {
     showDialog(
       context: context,
