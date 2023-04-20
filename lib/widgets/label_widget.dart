@@ -6,21 +6,9 @@ class LabelWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0,
-              color: Colors.orange),
-        ),
-        const Divider(
-          thickness: 2.0,
-          color: Colors.deepOrange,
-        ),
-      ],
+    // 標題的寫法
+    return Container(
+      child: Text(label),
     );
   }
 }

@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _setInfo();
+    // 加入執行
   }
 
   @override
@@ -36,15 +36,13 @@ class _HomePageState extends State<HomePage> {
                 );
 
                 if (result != null && result) {
-                  _setInfo();
+                  // 加入執行
                 }
               },
               child: const Text("填寫表單"),
             ),
             TextButton(
               onPressed: () {
-                Preferences.clear();
-                _setInfo();
               },
               child: const Text("清除資料"),
             ),
@@ -52,15 +50,5 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-  }
-
-  /// 呈現資料
-  _setInfo() {
-    String name = Preferences.getString("name", "");
-    if (name.isNotEmpty) {
-      setState(() {
-        text = "您的名稱是：$name\n您的 email 是 ${Preferences.getString("email", "")}";
-      });
-    }
   }
 }

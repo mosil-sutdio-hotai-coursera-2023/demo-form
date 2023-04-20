@@ -58,36 +58,7 @@ class FormResultPage extends StatelessWidget {
   /// 建立興趣的列表 Widget
   List<Widget> _buildHabitList() {
     List<Widget> list = [];
-    if (model.isBasketball) {
-      list.add(ListTile(
-        title: Text(HabitOption.basketball.text),
-        trailing: const Icon(Icons.sports_basketball),
-      ));
-    }
-    if (model.isBaseball) {
-      list.add(ListTile(
-        title: Text(HabitOption.baseball.text),
-        trailing: const Icon(Icons.sports_baseball),
-      ));
-    }
-    if (model.isHiking) {
-      list.add(ListTile(
-        title: Text(HabitOption.hiking.text),
-        trailing: const Icon(Icons.hiking),
-      ));
-    }
-    if (model.isMountaineering) {
-      list.add(ListTile(
-        title: Text(HabitOption.mountaineering.text),
-        trailing: const Icon(Icons.landscape),
-      ));
-    }
-    if (model.isSwim) {
-      list.add(ListTile(
-        title: Text(HabitOption.swim.text),
-        trailing: const Icon(Icons.water),
-      ));
-    }
+    // 使用 ListTile 將 habit options 呈現出來
     return list;
   }
 }
